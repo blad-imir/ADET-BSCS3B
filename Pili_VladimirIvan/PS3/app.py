@@ -3,7 +3,6 @@ import mysql.connector
 
 app = Flask(__name__)
 
-# MySQL Database connection configuration
 db_config = {
     'host': 'localhost',
     'user': 'root',  

@@ -5,7 +5,6 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = 'Adet'
 
-# MySQL connection configuration
 db_config = {
     'host': 'localhost',
     'user': 'root',
@@ -105,3 +104,4 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    

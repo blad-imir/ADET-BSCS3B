@@ -19,7 +19,7 @@ def register():
             'first_name': request.form.get('first_name'),
             'middle_name': request.form.get('middle_name'),
             'last_name': request.form.get('last_name'),
-            'birthdate': request.form.get('birthdate'),
+            'contact_number': request.form.get('contact_number'),
             'email': request.form.get('email'),
             'address': request.form.get('address')
         }
@@ -39,5 +39,5 @@ def register():
 def success():
     return "Registration Successful!"
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)

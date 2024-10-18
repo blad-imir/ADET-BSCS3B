@@ -7,8 +7,9 @@ def index():
     if request.method == 'POST':
         name = request.form.get('name')
         if name:
-            return render_template('index.html', greeting=f'Hello, {name}!')
+            greeting = f"Hello World! {name}, welcome to CCCS 106 - Applications Development and Emerging Technologies."
+            return render_template('index.html', greeting=greeting)
     return render_template('index.html')
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)

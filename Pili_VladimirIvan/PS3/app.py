@@ -6,8 +6,8 @@ app = Flask(__name__)
 # MySQL Database connection configuration
 db_config = {
     'host': 'localhost',
-    'user': 'root',  # Replace with your MySQL username
-    'password': '',  # Replace with your MySQL password
+    'user': 'root',  
+    'password': '',  
     'database': 'adet'
 }
 
@@ -19,7 +19,7 @@ def register():
             'first_name': request.form.get('first_name'),
             'middle_name': request.form.get('middle_name'),
             'last_name': request.form.get('last_name'),
-            'birthdate': request.form.get('birthdate'),
+            'contact_number': request.form.get('contact_number'),
             'email': request.form.get('email'),
             'address': request.form.get('address')
         }
@@ -29,14 +29,14 @@ def register():
             conn = mysql.connector.connect(**db_config)
             cursor = conn.cursor()
             sql = """
-            INSERT INTO adet_user (first_name, middle_name, last_name, birthdate, email, address)
+            INSERT INTO adet_user (first_name, middle_name, last_name, contact_number, email, address)
             VALUES (%s, %s, %s, %s, %s, %s)
             """
             cursor.execute(sql, (
                 registration_data['first_name'],
                 registration_data['middle_name'],
                 registration_data['last_name'],
-                registration_data['birthdate'],
+                registration_data['contact_number'],
                 registration_data['email'],
                 registration_data['address']
             ))
